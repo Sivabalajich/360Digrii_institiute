@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	employee object </title>
+</head>
+
+<body>
+	<h1>Employee Json file format</h1>
+	<script>
+
+		let employee = {
+			"id": 101,
+			"name": { "firstName": "Siva", "lastName": "Ch", "middleName": "Balaji" },
+			"salary": 560000,
+			"address": {
+				"hno": 123,
+				"street": "XYZ",
+				"city": "Hyd",
+				"pin": 500001,
+				"state": "tel",
+				"india": "yes",
+				"location": {
+					"lat": "17.40N",
+					"long": "58.4E"
+				}
+			},
+			"nominee": {
+				"name": "srinu",
+				"relationship": "father",
+				"age": 48,
+				"dob": "1-1-1972",
+				"occupation": "Farmer"
+			},
+
+			"accounts": [{ "accountNumber": 162, "amount": 234, "bankName": 657, "ifsc": "Te4556" },
+			{ "accountNumber": 152, "amount": 564, "bankName": 557, "ifsc": "Te4556" }
+
+			],
+
+			"expereince": [
+				{ "companyName": "Abc", "ctc": 4560 }
+
+			],
+
+			education:
+				[
+					{ "board": "SSCAP", "degree": "School", "marks": 456, "year": 2019 },
+					{ "board": "BIEAP", "degree": "Intermediate", "marks": 432, "year": 2021 },
+					{ "board": "JNTUK", "degree": "Undergraduation", "marks": 932, "year": 2025 }
+				]
+		}
+
+     console.log(employee.education[1]);
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+   
+    <title>Customer SignUp page</title>
+</head>
+<body>
+    <header>
+        <p style="align-items: right;" ><a href="https://www.facebook.com" target="_blank"><img src="images\facebook_icon.webp" height="30px" width="30px"></a><a href="https://www.instagram.com" target="_blank"><img src="images\insta_icon.jpg" height="30px" width="30px"></a><a href="https://www.linkedin.com" target="_blank"><img src="images\linkedin_icon.png" height="30px" width="30px" ></a><a href="https://www.whatsup.com" target="_blank"><img src="images\whatsup_icon.png" height="30px" width="30px"></a></p>
+        <center><font style="color:rgb(243, 14, 14);font-size:40px ">360Digrii</font><font style="color:black; font-size: 30px;">Basket</font>
+        </center>
+        <br><br>
+        <hr>
+    </header><br>
+    <form action="customer_signin.html" method="post">
+        <table border="1px">
+            <tr >
+                <td colspan="2">
+                 <h2>Sign up</h2>
+                 <p>Already have an account? <a href="customer_signup.html" style="text-decoration: none;">Sign in</a></p>
+                </td>
+             </tr>
+             <tr>
+                <td>
+                    <label for="title">Title*</label><br>
+                    <select name="title" id="title" required>
+                        <option value="Mr" id="title">Mr.</option>
+                        <option value="Mrs" id="title">Mrs.</option>
+                        <option value="Mss" id="title">Mss.</option>
+                    </select>
+                </td>
+                <td>
+                    <label for="fname">Full Name*</label><br>
+                    <input type="text" id="fname" name="fullname" placeholder="Name" required>
+
+                </td>
+             </tr>
+            <tr>
+                <td> 
+                    <label for="email">Email ID*</label><br><input type="email" id="email" name="email" placeholder="Email ID" required>
+                </td>
+                <td><label for="password">Password*</label><br>
+                    <input type="password" id="password" name="password" placeholder="At least 6 characters" required>
+                </td>
+
+            </tr>
+            <tr>
+                <td>  <label for="mnumber">Mobile Number* </label><br>
+                    <select name="country" id="mnumber" placeholder="Country" required>
+                        <option value="india">+91</option>
+                        <option value="china">+86</option>
+                        <option value="usa">+0</option>
+                        <option value="..">+6</option>
+
+                    </select>
+                    <input type="number" id="mnumber" placeholder="Number"></td>
+                <td>  <label for="dob">Date of Birth </label><br>
+                      <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" required>I agree to receive special updates,offers ,promotions from IGP.com
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" style="color: rgb(227, 225, 225); background-color: red; padding: 5px 200px 5px 200px;">SIGN IN</button></td>
+            </tr>
+
+        </table>
+    </form>
+    <br><br><br><footer><hr><br><h3 style="color:rgb(69, 69, 245); text-align: center;">coptright@360Digrii</h3></footer>
+
+</body>
+</html>
