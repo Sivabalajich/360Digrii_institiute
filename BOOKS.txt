@@ -1,0 +1,371 @@
+SQL> SELECT * FROM BOOKS;
+
+        ID NAME                      PRICE
+---------- -------------------- ----------
+         1 c                           250
+         2 cpp                         350
+         3 kotlin                      450
+         4 java                        550
+         5 python                      650
+         6 SQL                         450
+         7 JS                          560
+         8 php                        1010
+
+8 rows selected.
+
+
+
+
+SQL> delete books where id=3;
+
+1 row deleted.
+
+SQL> delete books where name='c';
+
+1 row deleted.
+
+SQL> SELECT * FROM BOOKS;
+
+        ID NAME                      PRICE
+---------- -------------------- ----------
+         2 cpp                         350
+         4 java                        550
+         5 python                      650
+         6 SQL                         450
+         7 JS                          560
+         8 php                        1010
+
+6 rows selected.
+
+SQL> delete books;
+
+6 rows deleted.
+
+SQL> SELECT * FROM BOOKS;
+
+no rows selected
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from products;
+
+no rows selected
+
+SQL> alter table products ADD(create_Date date default systimestamp,modified_Date date default systimestamp);
+
+Table altered.
+
+SQL> alter table products drop column cost;
+
+Table altered.
+
+SQL> alter table products RENAME column id to sno;
+
+Table altered.
+
+
+
+
+SQL> select * from products;
+
+no rows selected
+
+SQL> desc products;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO                                       NOT NULL NUMBER(5)
+ PROD_NAME                                 NOT NULL VARCHAR2(20)
+ CREATE_DATE                                        DATE
+ MODIFIED_DATE                                      DATE
+
+SQL> alter table products MODIFY(prod_name varchar(20) UNIQUE);
+
+Table altered.
+
+SQL> select * from employees;
+
+no rows selected
+
+SQL> create sequence employees_seq start with 1 increment by 1;
+
+Sequence created.
+
+SQL> desc employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                        NOT NULL NUMBER(2)
+ NAME                                      NOT NULL VARCHAR2(20)
+ AGE                                       NOT NULL NUMBER(3)
+ ADDRESS                                   NOT NULL VARCHAR2(50)
+ SALARY                                    NOT NULL FLOAT(9)
+ CREATE_DATE                                        DATE
+ MODIFIED_DATE                                      DATE
+
+
+
+
+SQL> alter table products MODIFY(create_date date default systimestamp,modified_date date default systimestamp);
+
+Table altered.
+
+SQL> alter table products MODIFY(create_date date default systimestamp,modified_date date default systimestamp);
+
+Table altered.
+
+
+
+
+SQL> alter table products MODIFY(create_date date default sysdate,modified_date date default sysdate);
+
+Table altered.
+
+SQL> alter table products MODIFY(create_date date default sysdate,modified_date date default sysdate);
+
+Table altered.
+
+
+
+
+SQL>  insert into employees(id,name,age,address,salary,create_date,modified_date) values(employees_seq.nextval,'Ramesh',32,'Ahmedabad',2000.0,sysdate,sysdate);
+
+1 row created.
+
+SQL>  insert into employees(id,name,age,address,salary,create_date,modified_date) values(employees_seq.nextval,'Khilan',23,'Delhi',1500.00,sysdate,sysdate);
+
+1 row created.
+
+SQL>  insert into employees(id,name,age,address,salary,create_date,modified_date) values(employees_seq.nextval,'Kaushik',23,'Delhi',2000.00,sysdate,sysdate);
+
+1 row created.
+
+SQL>  insert into employees(id,name,age,address,salary,create_date,modified_date) values(employees_seq.nextval,'Chaitali',25,'Mumbai',6500.00,sysdate,sysdate);
+
+1 row created.
+
+SQL>  insert into employees(id,name,age,address,salary,create_date,modified_date) values(employees_seq.nextval,'Hardik',25,'Bhopal',8500.00,sysdate,sysdate);
+
+1 row created.
+
+SQL>  insert into employees(id,name,age,address,salary,create_date,modified_date) values(employees_seq.nextval,'Komal',24,'Indore',8500.00,sysdate,sysdate);
+
+1 row created.
+
+SQL>  insert into employees(id,name,age,address,salary,create_date,modified_date) values(employees_seq.nextval,'Muffy',25,'Hyd',10000.00,sysdate,sysdate);
+
+1 row created.
+
+SQL> update employees set address='Chennai';
+
+7 rows updated.
+
+SQL> update employees set address='Chennai' where name='komal';
+
+0 rows updated.
+
+SQL> select * from employees;
+
+        ID NAME                        AGE
+---------- -------------------- ----------
+ADDRESS                                                SALARY CREATE_DA
+-------------------------------------------------- ---------- ---------
+MODIFIED_
+---------
+         1 Ramesh                       32
+Chennai                                                  2000 02-MAY-25
+02-MAY-25
+
+         2 Khilan                       23
+Chennai                                                  1500 02-MAY-25
+02-MAY-25
+
+        ID NAME                        AGE
+---------- -------------------- ----------
+ADDRESS                                                SALARY CREATE_DA
+-------------------------------------------------- ---------- ---------
+MODIFIED_
+---------
+
+         3 Kaushik                      23
+Chennai                                                  2000 02-MAY-25
+02-MAY-25
+
+         4 Chaitali                     25
+Chennai                                                  6500 02-MAY-25
+
+        ID NAME                        AGE
+---------- -------------------- ----------
+ADDRESS                                                SALARY CREATE_DA
+-------------------------------------------------- ---------- ---------
+MODIFIED_
+---------
+02-MAY-25
+
+         5 Hardik                       25
+Chennai                                                  8500 02-MAY-25
+02-MAY-25
+
+         6 Komal                        24
+
+        ID NAME                        AGE
+---------- -------------------- ----------
+ADDRESS                                                SALARY CREATE_DA
+-------------------------------------------------- ---------- ---------
+MODIFIED_
+---------
+Chennai                                                  8500 02-MAY-25
+02-MAY-25
+
+         7 Muffy                        25
+Chennai                                                 10000 02-MAY-25
+02-MAY-25
+
+
+7 rows selected.
+
+SQL> update employees set address='Chennai' where id=6;
+
+1 row updated.
+
+SQL> update employees set age=23 where name='Muffy';
+
+1 row updated.
+
+SQL> update employees set name='Muffi',address='Hyderbad',salary=44000 where name='Muffy';
+
+1 row updated.
+
+SQL> update employees set salary=salary+2500;
+
+7 rows updated.
+
+SQL> select * from employees;
+
+        ID NAME                        AGE
+---------- -------------------- ----------
+ADDRESS                                                SALARY CREATE_DA
+-------------------------------------------------- ---------- ---------
+MODIFIED_
+---------
+         1 Ramesh                       32
+Chennai                                                  4500 02-MAY-25
+02-MAY-25
+
+         2 Khilan                       23
+Chennai                                                  4000 02-MAY-25
+02-MAY-25
+
+        ID NAME                        AGE
+---------- -------------------- ----------
+ADDRESS                                                SALARY CREATE_DA
+-------------------------------------------------- ---------- ---------
+MODIFIED_
+---------
+
+         3 Kaushik                      23
+Chennai                                                  4500 02-MAY-25
+02-MAY-25
+
+         4 Chaitali                     25
+Chennai                                                  9000 02-MAY-25
+
+        ID NAME                        AGE
+---------- -------------------- ----------
+ADDRESS                                                SALARY CREATE_DA
+-------------------------------------------------- ---------- ---------
+MODIFIED_
+---------
+02-MAY-25
+
+         5 Hardik                       25
+Chennai                                                 11000 02-MAY-25
+02-MAY-25
+
+         6 Komal                        24
+
+        ID NAME                        AGE
+---------- -------------------- ----------
+ADDRESS                                                SALARY CREATE_DA
+-------------------------------------------------- ---------- ---------
+MODIFIED_
+---------
+Chennai                                                 11000 02-MAY-25
+02-MAY-25
+
+         7 Muffi                        23
+Hyderbad                                                46500 02-MAY-25
+02-MAY-25
+
+
+7 rows selected.
+
+SQL> update employees set salary=salary+5000 where salary<50000;
+
+7 rows updated.
+
+SQL> select * from accounts;
+
+no rows selected
+
+SQL> desc accounts;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACCNO                                     NOT NULL NUMBER(15)
+ NAME                                      NOT NULL VARCHAR2(20)
+ AMOUNT                                    NOT NULL FLOAT(126)
+
+SQL> insert into accounts(accNo,name,amount) values (101001,'Ganesh',48000);
+
+1 row created.
+
+SQL> insert into accounts(accNo,name,amount) values (101002,'Varun',78000);
+
+1 row created.
+
+SQL> insert into accounts(accNo,name,amount) values (101003,'Anil',88000);
+
+1 row created.
+
+SQL> select * from accounts;
+
+     ACCNO NAME                     AMOUNT
+---------- -------------------- ----------
+    101001 Ganesh                    48000
+    101002 Varun                     78000
+    101003 Anil                      88000
+
+SQL> commit;
+
+Commit complete.
+
+
+
+
+SQL> update accounts set amount=amount+10000 where accno=101001;
+
+1 row updated.
+
+SQL> update accounts set amount=amount-7000 where accno=101002;
+
+1 row updated.
+
+SQL> update accounts set amount=amount-5000 where accno=101001;
+
+1 row updated.
+
+SQL> update accounts set amount=amount+5000 where accno=101002;
+
+1 row updated.
+
+SQL> select * from accounts;
+
+     ACCNO NAME                     AMOUNT
+---------- -------------------- ----------
+    101001 Ganesh                    53000
+    101002 Varun                     76000
+    101003 Anil                      88000
+
+SQL> commit;
+
+Commit complete.

@@ -1,0 +1,120 @@
+CREATE TABLE sales (
+    product_id NUMBER,
+    sales_amount NUMBER,
+    sales_date DATE
+);
+INSERT INTO sales (product_id, sales_amount, sales_date) VALUES (1, 100, TO_DATE('2023-10-01', 'YYYY-MM-DD'));
+INSERT INTO sales (product_id, sales_amount, sales_date) VALUES (1, 150, TO_DATE('2023-10-02', 'YYYY-MM-DD'));
+INSERT INTO sales (product_id, sales_amount, sales_date) VALUES (2, 200, TO_DATE('2023-10-01', 'YYYY-MM-DD'));
+INSERT INTO sales (product_id, sales_amount, sales_date) VALUES (2, 300, TO_DATE('2023-10-02', 'YYYY-MM-DD'));
+INSERT INTO sales (product_id, sales_amount, sales_date) VALUES (1, 200, TO_DATE('2023-10-02', 'YYYY-MM-DD'));
+
+
+
+Question:
+
+ calculate the total sales amount for each product
+
+Query:
+
+select product_id,sum(sales_amount) as Total_sales from sales GROUP BY product_id;
+
+Output:
+
+product_id	total_sales
+
+1				450
+2				500
+
+
+================================Group By Example2===================================================
+
+CREATE TABLE student(
+    student_id NUMBER,
+    student_name VARCHAR2(100),
+    score NUMBER
+);
+
+INSERT INTO student (student_id, student_name, score) VALUES (1, 'Alice', 85);
+INSERT INTO student(student_id, student_name, score) VALUES (2, 'Bob', 90);
+INSERT INTO student (student_id, student_name, score) VALUES (3, 'Charlie', 85);
+INSERT INTO student(student_id, student_name, score) VALUES (4, 'David', 92);
+INSERT INTO student (student_id, student_name, score) VALUES (5, 'Eve', 90);
+
+
+Question:
+
+calculate the score for students who have the same score
+
+Query:	
+	select score,count(score) as student_count from student GROUP BY score;
+
+Output:
+
+score	student_count	
+
+85		2	
+90		2	
+92		1	
+
+================================Group By Example3===================================================
+
+CREATE TABLE departments (
+    department_id NUMBER,
+    department_name VARCHAR2(100),
+    budget NUMBER
+);
+
+INSERT INTO departments (department_id, department_name, budget) VALUES (1, 'HR', 50000);
+INSERT INTO departments (department_id, department_name, budget) VALUES (2, 'IT', 100000);
+INSERT INTO departments (department_id, department_name, budget) VALUES (3, 'Sales', 75000);
+INSERT INTO departments (department_id, department_name, budget) VALUES (4, 'Marketing', 60000);
+INSERT INTO departments (department_id, department_name, budget) VALUES (5, 'IT', 150000);
+
+Question:
+
+ calculate the total budget allocated to each department
+
+Query?
+select department_name,sum(budget) as total_budget from sales GROUP BY department_name;
+
+
+Output:
+
+
+department_name	total_budget
+
+HR				50000
+IT				250000
+Sales			75000
+Marketing		60000
+
+
+===========================Group By Example======================================
+mobiles:
+
+
+create table smartphones(
+    id INT PRIMARY KEY,
+    name VARCHAR(30),
+    color VARCHAR(20)
+);
+
+INSERT INTO smartphones (id, name, color) VALUES
+(1,'Vivo','white');
+(2,'Oppo','white');
+(3,'Redmi','black');
+(4,'Realme','white');
+(5,'iPhone','black');
+	
+Question:
+	Calculate the count of each color
+Query?
+	select color,count(color) as count from smartphones GROUP BY color; 
+
+Output:
+
+	color 	count
+	
+	white 	3
+	black	2

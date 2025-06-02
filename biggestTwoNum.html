@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Biggest of two numbers</title>
+</head>
+<body>
+    <script>
+      //with parameters and with return statement
+      function doBiggestNum1(n1,n2)
+      {
+        if(n1>n2)
+        {
+           result= "n1 is big"
+        }
+       
+        else {
+          result="n2 is big"
+         }
+        return result
+
+      }
+      
+      var r1=doBiggestNum1(24,25)
+      document.write(r1)
+      //without parameters and with return statement
+      function doBiggestNum2()
+      {
+        var n1=24
+        var n2=25
+        if(n1>n2)
+        {
+           result= "n1 is big"
+        }
+       
+        else {
+          result="n2 is big"
+         }
+        return result
+
+      }
+      
+      var r2=doBiggestNum2()
+      document.write("<br>",r2)
+      //with parameters and without return statement
+      function doBiggestNum3(n1,n2)
+      {
+        if(n1>n2)
+        {
+          document.write("<br>n1 is big")
+        }
+       
+        else {
+          document.write("<br>n2 is big")
+         }
+        
+
+      }
+      doBiggestNum3(24,25)
+      
+
+      //without parameters and without return statement
+      function doBiggestNum4()
+      {
+        var n1=24
+        var n2=25
+        if(n1>n2)
+        {
+          document.write("<br>n1 is big")
+        }
+       
+        else {
+          document.write("<br>n2 is big")
+         }
+        
+
+      }
+      doBiggestNum4()
+    </script>
+    
+</body>
+</html>

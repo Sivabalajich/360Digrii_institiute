@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Area of Circle</title>
+</head>
+<body>
+    <script>
+      //with parameters and with return statement
+      function doAreaOfCircle1(r)
+        {
+            const PI=3.14
+            var result=PI*(r*r)
+            return result
+        }
+        var r1=doAreaOfCircle1(2)
+        document.write("<br>Area of Circle1 : ",r1)
+        
+      //without parameters and with return statement
+      function doAreaOfCircle2()
+        {
+            const PI=3.14
+            var r=2
+            var result=PI*(r*r)
+            return result
+        }
+        var r2=doAreaOfCircle2()
+        document.write("<br>Area of Circle2 : ",r2)
+        
+      //with parameters and without return statement
+      function doAreaOfCircle3(r)
+        {
+            const PI=3.14
+            var result=PI*(r*r)
+            document.write("<br> Area of Circle3 : ",result)
+        }
+        doAreaOfCircle3(2)
+
+      //without parameters and without return statement
+      function doAreaOfCircle4()
+        {
+            const PI=3.14
+            var r=2
+            var result=PI*(r*r)
+            document.write("<br> Area of Circle4 : ",result)
+        }
+        doAreaOfCircle4()
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="cbl.js"></script>
+    <link rel="stylesheet" href="cbl.css">
+    <title>CBL Score status using validation</title>
+</head>
+<body>
+    <form action="s1"  onsubmit="return validation()" onreset="return clearData()">
+        <table>
+            <tr>
+               <td> <label for="cbl">Enter Your cibil score : </label></td>
+                <td><input type="number" id="cbl"  name="cbl"></td>
+                <td><span id="span"></span></td>
+            </tr>
+            <tr>
+                <td><button onclick="cblScore()" >Status</button></td>
+            </tr>
+            <tr>
+                <td> <label for="result" name="res">Your cibil score was: </label></td>
+                <td><span id="result" ></span></td>
+             </tr>
+             <tr>
+                <td><input type="reset" value="clear"></td>
+             </tr>
+        </table>
+    </form>
+</body>
+</html>

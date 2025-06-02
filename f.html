@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+
+  <script>
+    //total marks
+      function doTotal(java,sql,react){
+        var result=java+sql+react;
+       document.write("Total marks : ",result);
+        return result
+    }
+    //doTotal(79,74,80)
+
+    //average
+    function doAverage(java,sql,react)
+        {
+            var result=doTotal(java,sql,react)/3;
+            document.write("<br> avg of  3 subjects: ",result);
+            return result
+        }
+        //doAverage(79,74,80)
+
+        //Graded
+
+        function doGrade(j,s,r)
+        {
+            var avg = doAverage(j,s,r);
+
+            if(avg<=100 && avg>=90){
+
+                document.write("<br> Grade :  A");
+            }
+            else if(avg<90 && avg>=80)
+                {
+                document.write("<br> Grade :  B");
+            }
+            else if(avg<80 && avg>=70)
+                {
+                document.write("<br> Grade :  C");
+            }
+            else if(avg<70 && avg>=60)
+                {
+                document.write("<br> Grade :  D");
+            }
+            else if(avg<60 && avg>=50)
+                {
+                document.write("<br> Grade :  E");
+            }
+            else if(avg<50 && avg>=0)
+                {
+                document.write("<br> Grade :  FAIL");
+            }
+         
+
+        }
+        doGrade(78,74,80)
+
+  </script>
+</body>
+</html>

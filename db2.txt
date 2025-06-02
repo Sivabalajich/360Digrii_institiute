@@ -1,0 +1,14 @@
+
+CREATE TABLE flights(
+id number(10) PRIMARY KEY,
+Fname varchar(20) NOT NULL,
+Fnumber varchar(10) NOT NULL UNIQUE,
+source varchar(20) NOT NULL,
+destination varchar(20) NOT NULL,
+dep_time varchar(10) NOT NULL,
+arr_time varchar(10) NOT NULL,
+j_mode varchar(20) NOT NULL,
+price float NOT NULL,
+duration varchar(20));
+
+insert into flight(id,Fname,Fnumber,source,destination,dep_time,arr_time,j_mode,price,duration) into (1,'AirIndia','1a6115','HYD','Chennai','8:45AM','9:55AM','NON-STOP',10000.0,'1:H 10:Mns');

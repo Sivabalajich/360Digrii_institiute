@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum of 2 numbers</title>
+</head>
+<body>
+    <script>
+      //with parameters and with return statement
+      function doSum1(n1,n2)
+      {
+            var result=n1+n2
+            return result
+        }
+        var r1=doSum1(2,8)
+        document.write("sum of 2 numbers-1: ",r1)
+
+      //without parameters and with return statement
+      function doSum2()
+      {
+        var n1=2
+        var n2=8
+            var result=n1+n2
+            return result
+        }
+        var r2=doSum2()
+        document.write("<br>sum of 2 numbers-2: ",r2)
+
+
+      //with parameters and without return statement
+      function doSum3(n1,n2){
+            var result=n1+n2
+            document.write("<br>sum of 3 numbers-3: ",result)
+        }
+        doSum3(2,8)
+        
+
+      //without parameters and without return statement
+      function doSum4()
+      {
+        var n1=2
+        var n2=8
+        var result=n1+n2
+        document.write("<br>sum of 3 numbers-4: ",result)
+      }
+        doSum4()
+    </script>
+    
+</body>
+</html>

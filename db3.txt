@@ -1,0 +1,82 @@
+//Movies
+
+create table movies(
+Movie_ID number(5) PRIMARY KEY,
+Movie_Name varchar(20) NOT NULL,
+Language varchar(10) NOT NULL,
+Genre varchar(30) NOT NULL,
+Release_Date date NOT NULL,
+Created_Date timestamp NOT NULL,
+Modified_Date timestamp NOT NULL);
+
+
+
+insert into movies( Movie_ID,Movie_Name,Language,Genre,Release_Date,Created_Date,Modified_Date) values (501,'Hanuman','Telugu','Action,Fantasy',TO_DATE('12-JAN-24','DD-MM-YY'),TO_TIMESTAMP('28-APR-25 07:45:57.947000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 07:45:57.947000','DD-MM-YY HH24:MI:SS.FF'));
+
+insert into movies( Movie_ID,Movie_Name,Language,Genre,Release_Date,Created_Date,Modified_Date) values (502,'Family Star','Telugu','Romantic Drama',TO_DATE('15-JAN-24','DD-MM-YY'),TO_TIMESTAMP('28-APR-25 07:45:57.947000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 07:45:57.947000','DD-MM-YY HH24:MI:SS.FF'));
+
+//SCREENS
+
+create table Screens(
+Screen_ID number(5) PRIMARY KEY,
+Theatre_Name varchar(20) NOT NULL,
+Location varchar(20) NOT NULL,
+Total_Seats number(5) NOT NULL,
+Created_Date timestamp NOT NULL,
+Modified_Date timestamp NOT NULL);
+
+
+insert into screens(Screen_ID,Theatre_Name,Location,Total_Seats,Created_Date,Modified_Date) values(301,'PVR Panjagutta','Hyd',150,TO_DATE('15-JAN-24','DD-MM-YY'),TO_TIMESTAMP('28-APR-25 07:46:57.947000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 07:46:57.947000','DD-MM-YY HH24:MI:SS.FF'));
+
+insert into screens(Screen_ID,Theatre_Name,Location,Total_Seats,Created_Date,Modified_Date) values(302,'INOX GVK Mall','Hyd',180,TO_TIMESTAMP('28-APR-25 07:46:57.947000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 07:46:57.947000','DD-MM-YY HH24:MI:SS.FF'));
+
+
+insert into screens(Screen_ID,Theatre_Name,Location,Total_Seats,Created_Date,Modified_Date) values(303,'AMB Cinemas','Hyd',200,TO_TIMESTAMP('28-APR-25 07:46:57.947000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 07:46:57.947000','DD-MM-YY HH24:MI:SS.FF'));
+
+//SHOWS
+
+create table Shows(
+Show_ID number(5) PRIMARY KEY,
+Movie_ID number(5) REFERENCES Movies(Movie_ID),
+Screen_ID number(5) REFERENCES screens(Screen_ID),
+Show_Time timestamp,
+Available_Seats number(5) NOT NULL, 
+Created_Date timestamp NOT NULL,
+Modified_Date timestamp NOT NULL);
+
+insert into Shows(Show_ID, Movie_ID, Screen_ID,Show_Time,Available_Seats,Created_Date,Modified_Date) values (1,501,301,TO_TIMESTAMP('28-APR-25 18:00:00.0000000','DD-MM-YY HH24:MI:SS.FF'),120,TO_TIMESTAMP('28-APR-25 19:42:14.943000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 19:42:14.943000','DD-MM-YY HH24:MI:SS.FF'));
+
+insert into Shows(Show_ID, Movie_ID, Screen_ID,Show_Time,Available_Seats,Created_Date,Modified_Date) values (2,502,302,TO_TIMESTAMP('28-APR-25 21:00:00.0000000','DD-MM-YY HH24:MI:SS.FF'),150,TO_TIMESTAMP('28-APR-25 19:42:14.943000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 19:42:14.943000','DD-MM-YY HH24:MI:SS.FF'));
+
+insert into Shows(Show_ID, Movie_ID, Screen_ID,Show_Time,Available_Seats,Created_Date,Modified_Date) values (3,503,303,TO_TIMESTAMP('28-APR-25 17:30:00.0000000','DD-MM-YY HH24:MI:SS.FF'),100,TO_TIMESTAMP('28-APR-25 19:42:14.943000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 19:42:14.943000','DD-MM-YY HH24:MI:SS.FF'));
+
+//USERS TABLE
+
+create table users(
+User_ID number(10) PRIMARY KEY,
+User_Name varchar(50) NOT NULL,
+Email varchar(50) NOT NULL UNIQUE,
+Phone_No varchar(10) NOT NULL UNIQUE,
+Created_Date timestamp NOT NULL,
+Modified_Date timestamp NOT NULL
+);
+ 
+insert into users( User_ID,User_Name,Email,Phone_No,Created_Date,Modified_Date)values(101,'Ravi','ravi101@gmail.com',9999999999,TO_TIMESTAMP('28-APR-25  19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'));
+
+insert into users( User_ID,User_Name,Email,Phone_No,Created_Date,Modified_Date)values(102,'Siva','sivay12345@gmail.com',9999911111,TO_TIMESTAMP('28-APR-25  19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'));
+
+insert into users( User_ID,User_Name,Email,Phone_No,Created_Date,Modified_Date)values(103,'Venu','Venu@gmail.com',9999922222,TO_TIMESTAMP('28-APR-25  19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'));
+
+//BOOKINGS TABLE
+
+create table Bookings(
+Booking_ID number(10) PRIMARY KEY,
+User_ID number(10) REFERENCES Users(User_ID),
+Show_ID number(10) REFERENCES Shows(Show_ID),
+Seat_No Number(5) NOT NULL UNIQUE,
+Booking_status varchar(10) NOT NULL,
+Created_Date timestamp NOT NULL,
+Modified_Date timestamp NOT NULL);
+
+insert into Bookings( Booking_ID,User_ID,Show_ID,Seat_No,Booking_status, Created_Date,Modified_Date) values(1,101,1,101,'BOOKED',TO_TIMESTAMP('28-APR-25  19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'));
+insert into Bookings( Booking_ID,User_ID,Show_ID,Seat_No,Booking_status, Created_Date,Modified_Date) values(2,102,2,101,'BOOKED',TO_TIMESTAMP('28-APR-25  19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'),TO_TIMESTAMP('28-APR-25 19:48:14.943000','DD-MM-YY HH24:MI:SS.FF'));

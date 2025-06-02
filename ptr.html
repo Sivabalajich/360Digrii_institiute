@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="ptr.js"></script>
+    <link rel="stylesheet" href="ptr.css">
+    <title>Validation PTR</title>
+</head>
+<body>
+    <table>
+        <tr>
+           <td> <label for="p" >Enter Priciple amount: </label></td>
+            <td><input type="number" id="p" name="amount"></td>
+            <td><span id="span1"></span></td>
+        </tr>
+        <tr>
+           <td> <label for="t">Enter tenure: </label></td>
+            <td><input type="number" id="t" name="tenure"></td>
+            <td><span id="span2"></span></td>
+        </tr>
+        <tr>
+            <td><label for="r">Enter rate of interest: </label></td>
+            <td><input type="number" id="r"  name="rate"></td>
+            <td><span id="span3"></span></td>
+        </tr>
+        <tr>
+            <td><button onlclick="validation()" >Find interest</button></td>
+            <td> <input type="number" id="result"></td>
+        </tr>
+    </table>
+    
+   
+</body>
+</html>

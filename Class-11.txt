@@ -1,0 +1,223 @@
+
+
+TASK-1
+___________________________________________________________________________________________________________________________
+TASK1:
+
+1.Requirement: Show all employees names(Reading one column value)
+select name from employees;
+
+2.Requirement: Show all employees mailid(Reading one column value)
+select mailid from employees;
+
+3.Requirement: Show all employees userid and pswd (Reading more than one column values)
+select userid, password from employees;
+
+4.Requirement: Show all employees userid,salary and dept(Reading more than one column values)
+select userid, salary, dept from employees;
+
+5.Requirement: Show all employee details
+select * from employees;
+
+
+
+TASK-2 (Aggregate functions)
+___________________________________________________________________________________________________________________________
+
+Requirement1: Show highest salary in employees table
+select max(salary) from employees;
+
+Requirement2: Show lowest salary in employees table
+select min(salary) from employees;
+
+Requirement3: Show sum of all salaries in employees table
+select sum(salary) from employees;
+
+Requirement4: Show average of all salaries in employees table
+select avg(salary) from employees;
+
+Requirement5: Show number of rows in employees table
+select count(salary) from employees;
+
+Requirement6: Show eldest employee age in employees table
+select max(age) from employees;
+
+Requirement7: Show younger employee age in employees table
+select min(age) from employees;
+
+
+
+
+TASK-3 (Relational Operators <,>,<=,>=,<>,=,!=)
+____________________________________________________________________________________________________________________________
+
+Requirement1:Show name and age of all employees,  whose salary is below 40000
+select name, age from employees where salary < 40000;
+
+Requirement2:Show name, email of employees, whose salary is above 40000
+select name, email from employees where salary > 40000;
+
+Requirement3:Show all employees details whose salary is 50000 and above
+select * from employees where salary >= 50000;
+
+Requirement4:Show all employees details whose salary is 50000 and below
+select * from employees where salary <= 50000;
+
+Requirement5:Show all employees details whose salary is 50000 
+select * from employees where salary = 50000;
+
+Requirement6:Show all employees details whose salary is other than 50000 
+select * from employees where salary != 50000;
+
+Requirement7:Show all employees details whose belongs to hyd city
+select * from employees where city='hyd';
+
+Requirement8:Show all employees details whose belongs to eee department
+select * from employees where dept='eee';
+
+Requirement9:Show all employees details whose belongs to pune city 
+select * from employees where city='pune';
+
+Requirement10:Show all employees details whose belongs to Chennai  city
+select * from employees where city='Chennai';
+
+Requirement11:Show all employees details whose belongs to cse department 
+select * from employees where dept='cse';
+
+Requirement12:Show Sanjay details 
+select * from employees where id=5; 
+(OR) 
+select * from employees where name='Sanjay'; // Having only one person name as Sanjay
+
+
+
+TASK-4  (Logical operators and , or, not)
+____________________________________________________________________________________________________________________________
+
+
+1.Show all employees details whose belongs to hyd and age is below 30
+select * from employees address='hyd' and age<30;
+
+2.Show all employees details whose salaries in between 40k and 50k
+select * from employees age>40 and age<50;  Or select * from employees where age BETWEEN 41 AND 49;
+
+3.Show all employees details whose belongs to cse dept and salaries in between 40k and 50k
+select * from employees where dept='CSE' AND age BETWEEN 41 AND 49; 
+Or 
+select * from employees where dept='CSE' AND age>40 and age<50;
+
+4.Show all male employees details whose belongs to cse dept
+select * from employees where gender='male' AND dept='CSE';
+
+5.Show all female employees details whose belongs to hyd
+select * from employees where gender='female' AND city='hyd';
+
+6.Show all hyd employees details whose salary is 50k
+select * from employees where city='hyd' AND salary=50000;
+
+7.Show all non hyd employees details
+select * from employees where city != 'hyd';
+
+8.Show all non hyd employees details whose salary is 50k
+select * from employees where city != 'hyd' AND salary=50000;
+
+9.Show all hyd employees details
+select * from employees where city = 'hyd';
+
+
+10.Show all hyd,pune employees details
+select * from employees where city='hyd' OR city='pune';
+
+
+11.Show all hyd,pune,chennai employees details
+select * from employees where city='hyd' OR city='pune' OR city='chennai';
+(Or)
+select * from employees where city IN ('hyd','pune','Chennai');
+
+12.Show all non hyd,pune,chennai employees details
+select * from employees where city!='hyd' OR city!='pune' OR city!='chennai';
+(Or)
+select * from employees where city NOT IN ('hyd','pune','Chennai');
+
+
+13.Show all non cse,eee dept employees details
+select * from employees where dept NOT IN ('CSE','EEE');
+
+14.Show all male employees details
+select * from employees where gender='male'
+
+
+TASK-5 (Working with Order By Clause)
+____________________________________________________________________________________________________________________________
+
+R1: Show all employee details in ascending order based on their salaries.
+select * from employees ORDER BY salary;
+
+R2: Show all employee details in descending order based on their salaries.
+select * from employees ORDER BY salary DESC;
+
+R3: Show all employee emailids in descending order whose salaries between 30k and 40k
+select * from employees where salary>30000 AND salary<50000 ORDER BY emailids DESC;
+
+R4: show all employees in ascending order based on their userids
+select * from employees ORDER BY userid;
+(OR)
+select * from employees ORDER BY userid ASC;
+
+R5: show all employees in descending order based on their userids  whose belongs to cse dept
+select * from employees where dept='CSE' ORDER BY userid DESC;
+
+R6: show all employees in ascending order based on their ages
+select * from employees OREDR BY age ASC;  //ASC Optional
+
+R7: show all employees in descending order based on their ages  whose belongs to hyd city
+select * from employees where city='hyd' ORDER BY age DESC;
+
+R8: show all employees in ascending order based on their name
+select * from employees ORDER BY name ASC; //ASC optional
+
+R9: show all employees in descending order based on their names  whose belongs to eee dept
+select * from employees where dept='EEE' ORDER BY name DESC;
+
+
+
+TASK-6 (NULL,NOT NULL, BETWEEN, IN, NOT IN, IS, NOT IS, LIKE)
+____________________________________________________________________________________________________________________________
+
+-- Students with NULL age
+select * from students where age Is NULL;
+
+-- Students with NOT NULL grade
+select * from students where age Is NOT NULL;
+
+-- Students from specific cities
+select * from students where city IN ('hyd','Chennai');
+
+-- Students NOT from specific cities
+select * from students where city NOT IN ('hyd','Chennai');
+
+-- Students aged between 20 and 22
+select * from students where age BETWEEN 20 AND 22;
+
+-- Students aged NOT between 20 and 22
+select * from students where age NOT BETWEEN 20 AND 22;
+
+-- Students born between 2003 and 2005
+select * from students 
+where dob between dob LIKE '%%-%%-2003' AND dob LIKE '%%-%%-2005';
+
+-- Students NOT born in that range
+select * from students 
+where dob NOT between 
+dob LIKE '%%-%%-2003' AND dob LIKE '%%-%%-2005';
+
+-- Students with unknown DOB
+select * from students where dob IS NULL;
+
+
+
+
+
+
+
+

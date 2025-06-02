@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(212, 213, 230);
+}
+table{
+    background-color: rgb(35, 34, 34);
+    border: solid 2px;
+    padding: 10px 20px 20px 20px;
+    color: azure;
+}
+button{
+    background-color: rgb(126, 219, 126);
+    padding:2px 10px 2px 10px
+}
+span{
+    color: red;
+}
